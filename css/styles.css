@@ -631,8 +631,7 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        transition-property: visibility, opasity;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open{
@@ -642,6 +641,7 @@ pointer-events: auto;
 
 }
 .modal{
+    padding: 72px 24px 24px 24px;
     width: 408px;
     min-height: 584px;
     background-color: #fcfcfc;
@@ -650,9 +650,14 @@ pointer-events: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: зі значенням 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .close-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 24px;
     right: 24px;
@@ -662,9 +667,11 @@ pointer-events: auto;
 border-radius: 50%;
 width: 24px;
 height: 24px;
-background-color: transparent;
+background-color: #e7e9fc;
+border: 1px solid rgba(0, 0, 0, 0.1);
+cursor: pointer;
 fill: #2e2f42;
-transition: fill background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn:hover, 
@@ -682,7 +689,6 @@ transition: fill background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         letter-spacing: 0.02em;
         text-align: center;
         color: #2e2f42;
-        padding: 72px 24px 24px 24px;
         margin-bottom: 16px;
     }
 
@@ -704,7 +710,7 @@ padding-right: 24px;
 }
 .modal-form-input-cont{
     position: relative;
-}
+  }
 .modal-form-input {
     border: 1px solid rgba(46, 47, 66, 0.4);
         border-radius: 4px;
@@ -712,6 +718,8 @@ padding-right: 24px;
         height: 40px;
         padding-left: 38px;
         outline: transparent;
+        background-color: transparent;
+        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-input:focus{
@@ -724,9 +732,10 @@ padding-right: 24px;
 .modal-form-icon {
     position: absolute;
     top: 50%;
-    left: 19px;
+    left: 16px;
     transform: translateY(-50%);
     fill: #2e2f42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-comment{
@@ -738,15 +747,19 @@ padding-right: 24px;
         border-radius: 4px;
         width: 100%;
         min-height: 120px;
-        padding-left: 16px;
+        padding: 8px 16px;
         outline: transparent;
-}
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.04em;
+        color: rgba(46, 47, 66, 0.4);
+        background-color: transparent;
+        resize: none;
+        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
 .modal-form-comment::placeholder{
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.04em;
-    color: rgba(46, 47, 66, 0.4);
+    
 }
 
 .modal-form-comment:focus{
@@ -763,6 +776,7 @@ padding-right: 24px;
     align-items: center;
     background-color: transparent;
     margin-left: 8px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-con-checkbox{
@@ -777,7 +791,7 @@ padding-right: 24px;
     fill: transparent;
 }
 
-.label-checkbox a{
+.label-checkbox .label-privacy{
     line-height: 1.33;
     text-decoration: underline;
     text-decoration-skip-ink: none;
@@ -788,6 +802,7 @@ padding-right: 24px;
     background-color: #404bbf;
     fill: #f4f4fd;
     border: 1px solid #404bbf;
+    border: none;
 }
 
 .modal-btn{
@@ -810,9 +825,7 @@ padding-right: 24px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 24px;
-    transition-property: box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
 .modal-btn:focus{
