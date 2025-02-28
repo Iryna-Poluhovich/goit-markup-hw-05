@@ -613,7 +613,7 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         gap: 16px;
         border-radius: 4px;
         padding: 8px 24px;
-        width: 165px;
+        min-width: 165px;
         height: 40px;
         background: #4d5ae5;
         font-weight: 500;
@@ -622,10 +622,13 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         letter-spacing: 0.04em;
         text-align: center;
         color: #fff;
+        cursor: pointer;
+        border: none;
 }
 
 .subscribe-email {
     fill: #fff;
+    margin-left: 16px;
 }
 
 .backdrop{
