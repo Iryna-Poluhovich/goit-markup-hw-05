@@ -560,7 +560,13 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transform: translate(-50%, -50%);
 }
 
-.footer-subscribe {}
+.footer-subscribe {
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 16px;
+}
 
 .subscribe {
     font-weight: 500;
@@ -572,11 +578,7 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .subscribe-link {
-    display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        gap: 16px;
+    
 }
 .subscribe-form{
     display: flex;
